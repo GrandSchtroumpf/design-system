@@ -28,7 +28,8 @@ export default component$(() => {
     secondary: 160
   });
 
-  const copy = $((hex: string) => {
+  const copy = $((hex?: string) => {
+    if (!hex) return;
     navigator.clipboard.writeText(hex);
   });
 
