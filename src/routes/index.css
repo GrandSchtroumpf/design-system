@@ -1,0 +1,41 @@
+main {
+  display: grid;
+  gap: 24px;
+  padding: 16px;
+}
+.fieldset {
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+}
+table {
+  border-collapse: collapse;
+}
+label {
+  display: flex;
+  gap: 8px;
+}
+table input {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  text-align: center;
+}
+th,
+td {
+  padding: 8px;
+}
+th {
+  text-align: start;
+}
+td {
+  text-align: center;
+}
+
+.hue td {
+  padding: 0;
+}
+.hue button {
+  padding: 8px;
+  width: 100%;
+}

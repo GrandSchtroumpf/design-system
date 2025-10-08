@@ -1,0 +1,14 @@
+:root {
+  font-size: 16px;
+  font-family: system-ui;
+  color-scheme: dark;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  transition: scale 100ms;
+}
+button:active {
+  scale: 0.9;
+}
