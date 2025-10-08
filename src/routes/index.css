@@ -39,3 +39,10 @@ td {
   padding: 8px;
   width: 100%;
 }
+
+button[type="submit"] {
+  background-color: transparent;
+  border: solid 1px white;
+  border-radius: 8px;
+  padding: 8px 16px;
+}

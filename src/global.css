@@ -1,7 +1,20 @@
+@import "tailwindcss";
+
+@property --color-alpha {
+  syntax: "<percentage>";
+  initial-value: 1;
+  inherits: false;
+}
+
 :root {
   font-size: 16px;
   font-family: system-ui;
   color-scheme: dark;
+}
+
+body {
+  min-height: 100dvh;
+  background: radial-gradient(circle at 0% 0%, var(--secondary-400), var(--primary-300) 45%, var(--primary-100));
 }
 
 button {
@@ -11,4 +24,35 @@ button {
 }
 button:active {
   scale: 0.9;
+}
+
+[class|="btn"] {
+  padding: 8px 16px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border: none;
+  background-color: transparent;
+  border-radius: 32px;
+}
+.btn-primary {
+  background: linear-gradient(to bottom, var(--secondary-light), var(--primary-light));
+}
+.btn-secondary {
+  background: linear-gradient(to bottom, var(--primary-700), var(--primary-400));
+}
+.btn-tertiary {
+  background: linear-gradient(to bottom, var(--primary-400), var(--primary-300) 30%, var(--primary-200));
+}
+
+.card {
+  --color-alpha: 40%;
+  width: 300px;
+  height: 500px;
+  background-color: var(--primary-400);
+  border-radius: 16px;
+}
+
+@theme {
+  --spacing: 1px;
 }
