@@ -28,6 +28,7 @@
     "@builder.io/qwik-city": "^1.16.1",
     "@eslint/js": "latest",
     "@tailwindcss/vite": "^4.1.4",
+    "@types/culori": "^4.0.1",
     "@types/node": "20.19.0",
     "eslint": "9.32.0",
     "eslint-plugin-qwik": "^1.16.1",
