@@ -86,21 +86,6 @@ export default component$(() => {
               ))}
             </tr>
             <tr>
-              <th>Lightness</th>
-              {lightnesses.map((lightness, i) => (
-                <td key={i}>
-                  <input
-                    type="number"
-                    min="0"
-                    max="100"
-                    step="1"
-                    value={lightness}
-                    onInput$={(_, el) => (lightnesses[i] = el.valueAsNumber)}
-                  />
-                </td>
-              ))}
-            </tr>
-            <tr>
               <th>Chroma</th>
               {chromas.map((chroma, i) => (
                 <td key={i}>
@@ -111,6 +96,21 @@ export default component$(() => {
                     step="1"
                     value={chroma}
                     onInput$={(_, el) => (chromas[i] = el.valueAsNumber)}
+                    />
+                </td>
+              ))}
+            </tr>
+            <tr>
+              <th>Lightness</th>
+              {lightnesses.map((lightness, i) => (
+                <td key={i}>
+                  <input
+                    type="number"
+                    min="0"
+                    max="100"
+                    step="1"
+                    value={lightness}
+                    onInput$={(_, el) => (lightnesses[i] = el.valueAsNumber)}
                   />
                 </td>
               ))}
