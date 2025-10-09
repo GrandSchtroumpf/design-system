@@ -28,6 +28,9 @@ td {
 th {
   text-align: start;
 }
+th input {
+  text-align: end;
+}
 td {
   text-align: center;
 }

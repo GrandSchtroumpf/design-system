@@ -1,4 +1,4 @@
-import { $, component$, useStore } from '@builder.io/qwik';
+import { $, component$, useStore, useVisibleTask$ } from '@builder.io/qwik';
 import { formatHex } from 'culori';
 import { DocumentHead } from '@builder.io/qwik-city';
 import './index.css';
@@ -25,7 +25,9 @@ export default component$(() => {
   const chromas = useStore([15, 15, 15, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]);
   const hues = useStore<Record<string, number>>({
     primary: 205,
-    secondary: 160
+    secondary: 160,
+    buy: 170,
+    sell: 15,
   });
 
   const copy = $((hex?: string) => {
@@ -59,12 +61,17 @@ export default component$(() => {
     }
   });
 
+  // eslint-disable-next-line qwik/no-use-visible-task
+  useVisibleTask$(() => {
+    save();
+  });
+
   return (
     <main>
       <div class="fieldset" role="group">
         <label>
           <span>Main Chroma</span>
-          <input type="number" value="30" onInput$={setMainChroma} />
+          <input type="number" value="15" onInput$={setMainChroma} />
         </label>
         <label>
           <span>Neutral Chroma</span>
@@ -119,14 +126,17 @@ export default component$(() => {
             {Object.entries(hues).map(([key, hue]) => (
               <tr key={key} class="hue">
                 <th>
-                  <input
-                    type="number"
-                    min="0"
-                    max="360"
-                    step="1"
-                    value={hue}
-                    onInput$={(_, el) => (hues[key] = el.valueAsNumber)}
-                  />
+                  <label>
+                    {key}
+                    <input
+                      type="number"
+                      min="0"
+                      max="360"
+                      step="1"
+                      value={hue}
+                      onInput$={(_, el) => (hues[key] = el.valueAsNumber)}
+                    />
+                  </label>
                 </th>
                 {shades.map((_, j) => {
                   const backgroundColor = `oklch(${lightnesses[j]}% ${
